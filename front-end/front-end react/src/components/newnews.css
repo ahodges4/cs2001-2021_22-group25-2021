@@ -1,0 +1,146 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+
+.menu-bar{
+    background: rgb(0, 100, 0);
+    text-align: center;
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+
+.menu-bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.active, .menu-bar ul li:hover{
+    background: #2bab0d;
+    border-radius: 3px;
+
+}
+
+.menu-bar .fa{
+    margin-right: 8px;
+}
+
+.sub-menu-1{
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: rgb(0, 100, 0);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul{
+    display: block
+}
+
+.wrapper{
+    text-align: center;
+    border-radius: 5px;
+    padding: 25px 25px 30px;
+
+
+}
+
+.wrapper h2{
+    color: rgba(0, 100, 0);
+    font-size: 28px;
+    text-align: center;
+}
+
+.wrapper textarea{
+    width: 100%;
+    height: 65px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color: rgb(0, 100, 0);
+}
+
+.wrapper input{
+    width: 100%;
+    height: 25px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color: rgb(0, 100, 0);
+}
+
+textarea:is(:focus, :valid){
+    border-width: 2px;
+    padding: 15px;
+    border-color: rgb(0, 100, 0);
+}
+
+input:is(:focus, :valid){
+    border-width: 2px;
+    padding: 15px;
+    border-color: rgb(0, 100, 0);
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px
+}
+
+input::-webkit-scrollbar{
+    width: 0px
+}
+
+.wrapper .buttons{
+    border-top: 1px solid #ccc;
+
+
+}
+.buttons .features{
+    display: flex;
+    margin-top: -30px;
+
+
+}
+
+.buttons button{
+    border: none;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 13px 22px;
+    margin: 20px;
+    border-radius: 30px;
+    background: rgb(0, 100, 0);
+
+
+
+}
+
+.buttons button.loading{
+    opacity: 0.7;
+    pointer-events: none;
+}

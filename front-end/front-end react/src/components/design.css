@@ -1,0 +1,408 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+/* Global */
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.button_1{
+    height: 38px;
+    background: #008000;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0;
+    color: #ffffff;
+}
+
+/*Header*/
+header{
+    background: #008000;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #cccccc 3px solid;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+header #branding h1{
+    margin: 0;
+    text-align: left;
+}
+
+header .highlight, header .current a{
+    color: #000000;
+    font-weight: bold;
+}
+
+header li{
+    text-align: center;
+    display: inline;
+    padding: 0 177px 0 0px;
+}
+header #branding{
+    text-align: center;
+    color: #ffffff;
+}
+
+header nav{
+    text-align: center;
+    margin-top: 45px;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/* Showcase Login page */
+
+#login{
+    padding: 15px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#login h1{
+    text-align: center;
+}
+
+#login form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#login div.form{
+    display: block;
+    text-align: center;
+}
+
+#login input[type="username"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#login input[type="password"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#login li{
+    list-style: none;
+    display: list-item;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#login a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+#login a:hover{
+    font-weight: normal;
+}
+
+#section h1{
+    font-size: 20px;
+}
+
+#section p{
+    font-size: 15px;
+
+}
+
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #008000;
+    text-align: center;
+}
+
+.accordion {
+    margin: auto;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #008000;
+}
+
+.accordion__label,
+.accordion__content {
+    padding: 14px 20px;
+}
+
+.accordion__label {
+    display: block;
+    color: #ffffffe8;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.1s;
+}
+
+.accordion__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+.accordion__content {
+    background: #354241;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+}
+
+.accordion__input {
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+    display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+}
+
+#map{
+    width:900px;
+    max-width: 100%;
+    height: 500px;
+    position: center;
+}
+
+#faq{
+    padding: 26px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#faq h1{
+    text-align: center;
+}
+
+#News {
+    text-align: center;
+    background-color: #fafafa;
+    margin: auto;
+
+}
+
+/* Showcase Forgot Password*/
+/* Showcase */
+
+#forgot{
+    padding: 15px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#forgot h1{
+    text-align: center;
+}
+
+#forgot form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#forgot div.form{
+    display: block;
+    text-align: center;
+}
+
+#forgot input[type="username"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#forgot li{
+    list-style: none;
+    display: list-item;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#forgot a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+#forgot a:hover{
+    font-weight: normal;
+}
+
+#section h1{
+    font-size: 20px;
+}
+
+#section p{
+    font-size: 15px;
+
+}
+
+div.homeimg{
+    position: relative;
+    left: 750px;
+    top: -200px;
+    width:500%;
+    border-radius: 100% !important;
+    padding:0;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 65px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 65px;
+    height: 80px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.wrap{
+    width: 40%;
+    position: sticky;
+    top: 50%;
+    left: 30%;
+    transform: translate(-75%, -900%);
+}
+.btn-button-new-news{
+    background-color: #008000;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 0.9rem;
+    margin-top: 0.75rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-button-delete{
+    background-color: #dc3545;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border-radius: 0.6rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border: none;
+  }
+  .btn-button-like{
+    background-color: #008000;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border-radius: 0.6rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border: none;
+  }
+  
+  .btn-button-dislike{
+    background-color: #dc3545;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 0.6rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border: none;
+  }
+  .header-underline{
+    text-decoration: underline;
+  }
+  .header-color-green{
+    color: #008000;
+    font-size: 50px;
+  }
+  
