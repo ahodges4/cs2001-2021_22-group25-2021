@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset = "utf-8">
+        <meta name="vieport" content="width=device-width">
+        <meta name="description" content="Foodbank information and locator: login">
+        <meta name="keywords" content="foodbank, foodbank Map, foodbank info, foodbank information, foodbank donate">
+        <meta name="author" content="Group 25">
+        <title> Food4Everyone | Map</title>
+        <link rel = "stylesheet" th:href="@{/css/Style.css}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1>Food<span class= "highlight">4</span>Everyone</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <center>
+                        <li><a href="/" th:href="@{/home}">Home</a></li>
+                        <li class="current"><a href="/" th:href="@{/map}">Map</a></li>
+                        <li><a href="/" th:href="@{/newsPage}">News</a></li>
+                        <li><a href="/" th:href="@{/faq}">FAQ</a></li>
+                        <li><a href="/" th:href="@{/login}">Login</a></li>
+                    </center>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="map" class="container"></div>
+
+        <script type="text/javascript" th:src="@{/js/map.js}"></script> 
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACSwaSYb-WIpFyNnPZy65HLFoMJOAigDo&callback=initMap" async defer></script>
+        <div class="wrap">
+            <div class="search">
+                <div style = "position:absolute; left:510px; top:3px;width: 115%;">           
+               <input type="text" class="searchTerm" placeholder="Enter Your Post Code or Location">
+                 <i class="fa fa-search"></i>
+              </button>
+               </a>
+            </div>
+         </div>
+        </div>
+        <footer>
+            <p>Food4Everyone, Copyright &copy; 2021</p>
+            <a href="https://www.givefood.org.uk/api/">Give Food API</a>
+            <p><a th:href="@{/PrivacyPolicy}">Privacy policy</a></p>
+        </footer>
+    </body>
+</html>

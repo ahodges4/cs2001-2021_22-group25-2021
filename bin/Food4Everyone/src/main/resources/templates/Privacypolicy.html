@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/PrivacyStyleSheet.css}">
+    <link rel="stylesheet" th:href="@{/css/CollapseStyle.css}">
+    <title>Food4Everyone | Privacy Policy</title>
+</head>
+<body>
+  <script th:src = "@{/Privacy.js}"></script>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Food<span class= "highlight">4</span>Everyone</h1>
+            </div>
+            <nav>
+                <ul>
+                  <li><a href ="/" th:href="@{/home}">Home</a></li>
+                  <li><a href="/" th:href="@{/map}">Map</a></li>
+                  <li><a href="/" th:href="@{/newsPage}">News</a></li>
+                  <li><a href="/" th:href="@{/faq}">FAQ</a></li>
+                  <li><a href="/" th:href="@{/login}">Login</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Privacy policy and copyright statement</h1>
+    <h2>Our approach to privacy</h2>
+    <p>This website collects data on the admins and charitiy foodbanks using the website.  The use of this data is governed by data protection laws. In the UK these laws are the UK General Data Protection Regulation (UK-GDPR) and the Data Protection Act 2018.</p>
+    <p>This page sets out how Food4Everyone complies with the legislation, your rights about how your data is managed and how you can contact us if you have questions.</p>
+    <p>Food4U is made by Brunel University students with the help of staff, this means the data this website collects is not only controlled by Food4Everyone but also Brunel University. This means we both make decisions about what data we collect from you, and us at Food4Everyone decide how we use it in line with the law.</p>
+    <p>We won’t do anything with your information you wouldn’t reasonably expect.</p>
+    <button type="button" class="collapsible" onclick="test();">Securing your data</button>
+    <div class="content">
+      <p>To keep your data secure we encrypt all passwords used using a hash key specially designed for our website, this enusures protection from hackers and protects against information leaks.</p>
+    </div>
+    <button type="button" class="collapsible">Location and disclosing your data</button>
+    <div class="content">
+      <p>We store any data we recieve on our onsite database and only disclose inforamtion to official members of the Food4Everyone website and authorised members of the Brunel Universty staff.</p>
+    </div>
+    <button type="button" class="collapsible">Records Retention</button>
+    <div class="content">
+      <p>We keep the data of verified Food4Everyone users permanantly unless said member wants to remove their data. Please refer to <a href="https://www.givefood.org.uk/privacy/">givefood.orgs privacy policy</a> to know the record retention of the data in the foodbank.org API.</p>
+    </div>    <button type="button" class="collapsible">Lawful Basis</button>
+    <div class="content">
+      <p>When we process your personal data, we need to have a lawful basis to do so. A lawful basis is a reason in law that permits us to use your data for a specific purpose. The lawful basis we use depends on what we are doing with your data (our purpose for having it).  We have summarised our key lawful basis and our purpose for having your data below.</p>
+    </div>
+    <button type="button" class="collapsible">Public task</button>
+    <div class="content">
+      <p>The reporting of data to regulatory or statutory bodies including the Office for Students, HESA, NSS, etc.</p>
+    </div>    <button type="button" class="collapsible">Legal obligation</button>
+    <div class="content">
+      <p>The collection and use of data to ensure we comply with the Equality Act 2010. The collection and use of data that is required to ensure compliance with Health & Safety legislation.The collection and use of data to ensure compliance with financial, taxation and pensions legislation.The collection and use of data to ensure compliance with immigration legislation and terms of our UKVI licencing conditions.</p>
+    </div>    <button type="button" class="collapsible">Consent</button>
+    <div class="content">
+      <p>When you want us to discuss your queries with someone else such as a relative or guardian. When you want us to share your details with a 3rd party so they can contact you.</p>
+    </div>
+    <button type="button" class="collapsible">Your rights</button>
+    <div class="content">
+        <p>In the UK everyone has rights about how their personal data is managed. The rights are:</p>
+        <p>The right to be informed</p>
+        <p>The right of access</p>
+        <p>The right to rectification</p>
+        <p>The right to erasure</p>
+        <p>The right to restrict processing</p>
+        <p>The right to data portability</p>
+        <p>The right to object</p>
+        <p>Rights in relation to automated decision making and profiling.</p>
+        <P>You can make an information rights request at any time by contacting our data protection team via email:<a href="mailto:Food4Everyone@gmx.co.uk">Food4Everyone@gmx.co.uk</a></P>
+    </div>
+    <h2>Concerns</h2>
+    <p>if you are not happy with how we handle your data please email <a href="mailto:Food4Everyone@gmx.co.uk">Food4Everyone@gmx.co.uk</a> if you are not satisfied with our response you have the right to make a complaint to the Information Commissioners Office. You can find out more about your rights under data protection legislation from the Information Commissioner's Office website available at: <a href="https://ico.org.uk/"> www.ico.org.uk</a></p>
+    <h2>External Links</h2>
+    <p>Please note that Brunel University or Food4Everyone has no control over, or responsibility for, the privacy policies of third-party websites which may be accessed from Food4Everyone's own website. Once you have left our website, Food4Everyone's privacy policy no longer applies.</p>
+    <h2>Copy right statement</h2>
+    <p>We created our database with the help of an API called -<a href="https://www.givefood.org.uk/api/2/foodbanks/">givefood.org</a>  (This is not our API and all information belongs to the indivduals who contributed to the making of that API.)</p>
+    <P>With the exception of the GiveFood.org API, the copyright and intellectual property rights of all material held on this website belong to Brunel university and its staff or students or have been licensed to the University.</P>
+    <P>Food4Everyone allows the copying of material from its website solely for personal use or for reference under the Freedom of Information but the reproduction, publication, distribution or broadcast of material for any commercial purpose is strictly forbidden without prior permission from the University. No content may be altered or adapted in any way and permission must be obtained for its inclusion in any papers or other publications. If you wish to apply for copyright clearance to reproduce content, please contact the Brunel University <a href="mailto:monique.ritchie@brunel.ac.uk">Copyright and Digital Resources Officer.</a></P>
+    <P>You may link to the Food4Everyone home page without permission and to all other pages on the website. A link to Food4Everyone from a third-party web page does not imply any endorsement from Brunel University or Food4Everyone of that web site and no endorsement is implied by any links from Food4Everyone's web pages to third party sites.</P>
+    <button type="button" class="collapsible">Before you leave, it would be a great help if you could provide some feedback on the page. Did you find it useful? Is there something we can improve? Any feedback would be greatly appreciated. We'll even send you an email telling you how you helped us!</button>
+    <div class="content">
+      <form> 
+        <label for = "name">Name:</label><br>
+        <input type = "name" id = "name" name = "name" size="50" required><br> 
+        <label for = "email">Email:</label><br>
+        <input type = "email" id = "email" name= "email" size="50" required><br>
+        <label for = "Feedback">Feedback:</label><br>
+        <textarea  id="Feedback" name="Feedback" required minlength="1"></textarea><br>
+        <input type="button" id="button" value="Send" onclick="submitFormtoReqRes()">
+    </form>
+    </div>
+    <div id="hiddenSection">
+    </div>
+   
+    <footer>
+        <p>Food4Everyone, Copyright &copy; 2021</p>
+        <p><a th:href="@{/PrivacyPolicy}">Privacy policy</a></p>
+    </footer>
+    <script th:inline="javascript" src="/js/Collapse.js"></script>
+
+</body>
+</html>
+
+
+
+

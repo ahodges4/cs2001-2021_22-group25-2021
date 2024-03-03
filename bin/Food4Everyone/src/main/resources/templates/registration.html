@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset = "utf-8">
+        <meta name="vieport" content="width=device-width">
+        <meta name="description" content="Foodbank information and locator: login">
+        <meta name="keywords" content="foodbank, foodbank Map, foodbank info, foodbank information, foodbank donate">
+        <meta name="author" content="Group 25">
+        <title> Food4Everyone | Register</title>
+        <link rel = "stylesheet" th:href="@{/css/Style.css}">
+    </head>
+    <body>
+    	<header>
+            <div class="container">
+                <div id="branding">
+                    <h1>Food<span class= "highlight">4</span>Everyone</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/" th:href="@{/home}">Home</a></li>
+                        <li><a href="/" th:href="@{/map}">Map</a></li>
+                        <li><a href="/" th:href="@{/newsPage}">News</a></li>
+                        <li><a href="/" th:href="@{/faq}">FAQ</a></li>
+                        <li><a href="/" th:href="@{/login}">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="registration">
+            <div class="container">
+                <h1>Create Your Account</h1>
+                <div class="form">
+                    <form th:action="@{/registration}" method="post" th:object="${user}">
+                    
+                    	<div th:if="${param.success}">
+                  			<div class="alert alert-info">You've successfully registered!</div>
+           				 </div>
+           				 
+                    	<div class="form-reg-info">
+                        	<input type ="text" id="fullName" class="form-control" th:field="*{fullName}" placeholder="Enter your Full Name..."required autofocus="autofocus"><br></br>
+                    	</div>
+                    	
+                    	<div class="form-reg-info">
+                        	<input type="text" id="username" class="form-control" th:field="*{username}" placeholder="Enter your Username..."required autofocus="autofocus"><br></br>
+                    	</div>
+                    	
+                    	<div class="form-reg-info">
+                        	<input type="text" id="email" class="form-control" th:field="*{email}" placeholder="Enter your Email..."required autofocus="autofocus"><br></br>
+                    	</div>
+                    	
+                    	<div class="form-reg-info">
+                        	<input type="text" id="phone" class="form-control" th:field="*{phone}" placeholder="Enter your Phone Number..."required autofocus="autofocus"><br></br>
+                    	</div>
+                    	
+                    	<div class="form-reg-info">
+                        	<input type="password" id="password" th:field ="*{password}" placeholder="Enter your Password..." required autofocus="autofocus"><br></br>
+                        	<button type="submit" class="button_1">Register</button>
+                    	</div>
+                    	
+                    	<div class="form-reg-info">
+                        	<a href="/login" th:href="@{/login}">Already Registered? Login here</a>
+                    	</div>
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>Food4Everyone, Copyright &copy; 2021</p>
+    </footer>
+    

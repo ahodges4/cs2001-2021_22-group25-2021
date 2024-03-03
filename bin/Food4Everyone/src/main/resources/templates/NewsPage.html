@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta name="Dashboard" content="width=device, initial-scale= 1.0">
+        <title>FoodForEveryone</title>
+        <link rel="stylesheet" th:href="@{css/NewsPage.css}">
+        <script src="https://kit.fontawesome.com/7ce2b56a0a.js" crossorigin="anonymous"></script>
+
+        
+    </head>
+    <body>
+        <div class= "menu-bar">
+        <ul>
+            <li><a th:href= "@{ControlPage}"><i class="fa fa-home"></i>Home</a></li>
+            <li class="active"><a th:href= "@{NewsPage}"><i class="fa fa-newspaper"></i>News</a></li>
+            <li><a href= "#"><i class="fa fa-bars"></i>More</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a th:href= "@{logout}">Logout</a></li>
+                        <li><a th:href= "@{changecredential}">Change my Email and Password</a></li>
+                    </ul>
+                </div>
+            
+            </li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <h2>NewsPage Content</h2>
+        <textarea placeholder="Please add content here to be added to the News Page..." required></textarea>
+    </div>
+
+    <script>
+        const textarea = document.querySelector("textarea");
+        textarea.addEventListener("keyup", e =>{
+          textarea.style.height = "63px";
+          let scHeight = e.target.scrollHeight;
+          textarea.style.height = `${scHeight}px`;
+        });
+      </script>
+      
+
+      
+      
+      <div class="buttons">
+          <div class="features">
+              <button id="btn-one">Submit</button>
+            </div>
+        </div>
+
+
+    
+    </body>
+    </html>

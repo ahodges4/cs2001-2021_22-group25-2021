@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="vieport" content="width=device-width">
+        <meta name="description" content="Foodbank information and locator: login">
+        <meta name="keywords" content="foodbank, foodbank Map, foodbank info, foodbank information, foodbank donate">
+        <meta name="author" content="Group 25">
+        <title> Food4Everyone | Login</title>
+        <link rel = "stylesheet" th:href="@{/css/Style.css}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1>Food<span class= "highlight">4</span>Everyone</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/" th:href="@{/home}">Home</a></li>
+                        <li><a href="/" th:href="@{/map}">Map</a></li>
+                        <li><a href="/" th:href="@{/newsPage}">News</a></li>
+                        <li><a href="/" th:href="@{/faq}">FAQ</a></li>
+                        <li class="current"><a href="/" th:href="@{/login}">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="login">
+            <div class="container">
+                <h1>Login To Your Account</h1>
+                <div class="form">
+                    <form th:action="@{/login}" method="post">
+                    	
+                    	<div th:if = "${param.error}">
+                    		<div class="alert"> Invalid Username or Password</div>
+                    	</div>
+                    	
+                    	<div class="form-info">
+                        	<input type="text" id="username" name="username" placeholder="Enter Username..." autofocus="autofocus"><br></br>
+                    	</div>
+                    	
+                    	<div class="form-info">
+                        	<input type="password" id="password" name ="password" placeholder="Enter Password..."><br></br>
+                        	<button type="submit" class="button_1">Submit</button>
+                    	</div>
+                    	
+                        	<li><a th:href="@{/forgot}">forgot password</a></li>
+                        	<li><a href = "/" th:href="@{/registration}">new user? create account here</a></li>
+                    	</div>
+                    </form> 
+                </div>
+            </div>
+        </section>
+        <section id="placeholder">
+            <div class="container">
+                <h1>Logging in after you have Registered</h1>
+                <p>Please note that until your identity has been confirmed by our staff that you will not be able to login and make desired changes to our news page</p>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>Food4Everyone, Copyright &copy; 2021</p>
+        <p><a th:href="@{/PrivacyPolicy}">Privacy policy</a></p>
+    </footer>
+</html>

@@ -1,0 +1,447 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+/* Global */
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    align-self:center;
+}
+
+.button_1{
+    height: 38px;
+    background: #008000;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0;
+    color: #ffffff;
+}
+
+/*Header*/
+header{
+    background: #008000;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #cccccc 3px solid;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+header #branding h1{
+    margin: 0;
+    text-align: left;
+}
+
+header .highlight, header .current a{
+    color: #000000;
+    font-weight: bold;
+}
+
+header li{
+    text-align: center;
+    display: inline;
+    padding: 0 177px 0 0px;
+}
+header #branding{
+    text-align: center;
+    color: #ffffff;
+}
+
+header nav{
+    text-align: center;
+    margin-top: 45px;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/* Showcase Login page */
+
+#login{
+    padding: 15px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#login h1{
+    text-align: center;
+}
+
+#login form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#login div.form{
+    display: block;
+    text-align: center;
+}
+
+#login input[type="text"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#login input[type="password"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#login li{
+    list-style: none;
+    display: list-item;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#login a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+#login a:hover{
+    font-weight: normal;
+}
+
+#section h1{
+    font-size: 20px;
+}
+
+#section p{
+    font-size: 15px;
+
+}
+
+footer, .FooterText{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #008000;
+    text-align: center;
+}
+
+.homeFooter{
+    right:0px;
+}
+
+.accordion {
+    margin: auto;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #008000;
+  }
+  
+  .accordion__label,
+  .accordion__content {
+    padding: 14px 20px;
+  }
+  
+  .accordion__label {
+    display: block;
+    color: #ffffffe8;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.1s;
+  }
+  
+  .accordion__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+  }
+  
+  .accordion__content {
+    background: #354241;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+  }
+  
+  .accordion__input {
+    display: none;
+  }
+  
+  .accordion__input:checked ~ .accordion__content {
+    display: block;
+  }
+  
+  .accordion__input:checked ~ .accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+  }
+
+#map{
+    top: 2px;
+    width:900px;
+    max-width: 100%;
+    height: 600px;
+    position: center;
+}
+
+#faq{
+    padding: 26px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#faq h1{
+    text-align: center;
+}
+
+
+/* Showcase Forgot Password*/
+/* Showcase */
+
+#forgot{
+    padding: 15px;
+    color: #ffffff;
+    background: #354241;
+}
+
+#forgot h1{
+    text-align: center;
+}
+
+#forgot form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#forgot div.form{
+    display: block;
+    text-align: center;
+}
+
+#forgot input[type="username"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#forgot li{
+    list-style: none;
+    display: list-item;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#forgot a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+#forgot a:hover{
+    font-weight: normal;
+}
+
+#section h1{
+    font-size: 20px;
+}
+
+#section p{
+    font-size: 15px;
+
+}
+
+div.homeimg{
+    position: relative;
+    left: 750px;
+    top: -200px;
+    width:500%;
+    border-radius: 100% !important;
+    padding:0;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 65px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 65px;
+    height: 80px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .wrap{
+    width: 40%;
+    position: sticky;
+    top: 50%;
+    left: 30%;
+    transform: translate(-75%, -900%);
+  }
+
+#map h1{
+    font-size: 16px;
+    display: inline;
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+
+#map h2{
+    font-size: 14px;
+    display: inline;
+    text-decoration: underline;
+}
+
+#map h3{
+    font-size:14px;
+    display:inline;
+}
+
+.custom-map-control-button{
+    display: table-cell;
+    font-size: 18px;
+    font-family: Roboto, Arial, sans-serif;
+    color:rgb(86, 86, 86);
+    border: 20px black;
+    border-radius: 2px;
+    background: rgb(255,255,255);
+    top: 10px !important;
+    height: 40px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px 17px;
+}
+
+.custom-map-control-button:hover{
+    cursor: pointer;
+    background: rgb(235,235,235);
+    color:black;
+}
+
+/*Registration made to work with MySQL Workbench*/
+  
+#registration{
+	padding: 15px;
+	color: #ffffff;
+    background: #354241;
+}
+
+#registration h1{
+    text-align: center;
+}
+
+#registration form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#registration div.form{
+    display: block;
+    text-align: center;
+}
+
+#registration input[type="text"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#registration input[type="password"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#registration li{
+    list-style: none;
+    display: list-item;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#registration a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+#registration a:hover{
+    font-weight: normal;
+}
+
+
+
+

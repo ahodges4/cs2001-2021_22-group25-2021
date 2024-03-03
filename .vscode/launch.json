@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Food4EveryoneApplication",
+            "request": "launch",
+            "mainClass": "com.example.Food4Everyone.Food4EveryoneApplication",
+            "projectName": "Food4Everyone"
+        }
+    ]
+}

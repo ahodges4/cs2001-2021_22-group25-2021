@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <meta name="vieport" content="width=device-width">
+        <meta name="description" content="Foodbank information and locator: login">
+        <meta name="keywords" content="foodbank, foodbank Map, foodbank info, foodbank information, foodbank donate">
+        <meta name="author" content="Group 25">
+        <title> Food4Everyone | Login</title>
+        <link rel = "stylesheet" th:href="@{/css/Style.css}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div id="branding">
+                    <h1>Food<span class= "highlight">4</span>Everyone</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a th:href="@{home}">Home</a></li>
+                        <li><a th:href="@{map}">Map</a></li>
+                        <li><a th:href="@{news}">News</a></li>
+                        <li><a th:href="@{faq}">FAQ</a></li>
+                        <li><a th:href="@{login}">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="forgot">
+            <div class="container">
+                <h1>Reset Your Account Password</h1>
+                <div class="form">
+                    <form>
+                        <input type="username" placeholder="Enter Username..."><br></br>
+                        <button type="submit" class="button_1">Submit</button>
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <p>Food4Everyone, Copyright &copy; 2021</p>
+    </footer>
+</html>

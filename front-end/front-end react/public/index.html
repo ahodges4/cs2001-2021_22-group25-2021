@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm_LTLcktVGO_-WafMVvNtFZdvcS8TG4A&libraries=places"></script>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>News App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      function initMap() {
+        var myMapCenter = {lat: 54.235538, lng: -2.485605};
+          
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myMapCenter,
+          zoom: 5
+        });
+          
+          infoWindow = new google.maps.InfoWindow();
+          const locationButton = document.createElement("button");
+
+          var opt = {minZoom: 5}; //Furthest that user can zoom out
+          map.setOptions(opt);
+
+          locationButton.textContent = "Pan to Current Location"; //Add pan to current location button to map
+          locationButton.classList.add("custom-map-control-button");
+          map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+          locationButton.addEventListener("click", () => {
+           // Try HTML5 geolocation.
+              if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(
+                      (position) => {
+                          const pos = {
+                              lat: position.coords.latitude,
+                              lng: position.coords.longitude,
+                          };
+                          map.setCenter(pos);
+                          map.setZoom(14);
+                      },  
+                  );
+              }
+          });
+
+
+        function markFoodBank(foodBankInfo){
+              const pos = {
+                              lat: foodBankInfo.lat,
+                              lng: foodBankInfo.lng,
+                          };
+          // Create a marker and set its position.
+          var marker = new google.maps.Marker({
+           map: map,
+        position: pos,
+        title: foodBankInfo.name
+      });
+
+      // show store info when marker is clicked
+      marker.addListener('click', function(){
+        showFoodBankInfo(foodBankInfo);
+      });
+ }
+
+    // show foodBank info in text box
+    function showFoodBankInfo(foodBank){
+          const pos2 = {
+                              lat: foodBank.lat,
+                              lng: foodBank.lng,
+                          };
+      infoWindow.setPosition(pos2);
+          
+          if (foodBank.network == "IFAN"){ //Show the network only if the foodbank is apart of one
+              var network = foodBank.network + ": "; 
+              var image = "img/IFAN-logo.png";
+          }else if (foodBank.network == "Trussell Trust"){
+              var network = foodBank.network + ": "; 
+              var image = "img/Trussell-Trust-logo.png";
+          }else{
+              var network = "";
+              var image = "img/Independent.png";
+          }
+
+          try{//Show Registered Charity Info
+              var charity = '<b><br>Charity Registration:</b> ' + foodBank.charity.registration_id.link(foodBank.charity.register_url);
+          }catch{
+              var charity = '';
+          }
+          
+          infoWindow.setContent(
+              '<h1>Food Bank</h1>: <h3>'+ network + foodBank.name +  '</h3>' + "<img width='80' src='" + image + "' ALIGN='right'>"
+              + '<b><br><br>Address:</b>' + foodBank.address.link("https://www.google.com/maps/dir//" + foodBank.lat_lng)
+        + '<b><br>Email:</b> ' + foodBank.email.link("mailto:" + foodBank.email)
+              + '<b><br>Phone:</b> ' + foodBank.phone.link("tel:" + foodBank.phone)
+              + '<b><br>Donate:</b> ' + foodBank.url.shopping_list.link(foodBank.url.shopping_list)
+              + charity);
+          infoWindow.open(map);    	
+}
+      
+      var settings = {
+      url: "http://localhost:8080/foodBanks",
+      method: "GET",
+      async : false,
+      timeout: 0,
+      };
+
+      $.ajax(settings).done(function (foodBankInfo) {
+          foodBankInfo.forEach(function(foodBank){
+          markFoodBank(foodBank);
+    });
+      
+      });
+
+      }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACSwaSYb-WIpFyNnPZy65HLFoMJOAigDo&callback=initMap" async defer></script>
+  
+  <script>
+
+var pass = document.getElementById("pass1")
+if(pass){
+
+
+pass.addEventListener("keyup", function(){
+    checkpassword(pass1.value)
+})}
+
+function checkpassword(pass1){
+    var strengthBar = document.getElementById("strength")
+    var strength = 0;
+    if (pass1.match(/[a-zA-z0-9][a-zA-z0-9]+/)) {
+        strength += 1
+    }
+    if (pass1.match(/[~<>?]+/)) {
+        strength += 1
+    }
+    if (pass1.match(/[!@£$%^&*()]+/)) {
+        strength += 1
+    }
+    if (pass1.length > 8) {
+        strength += 1
+    }
+
+    switch(strength){
+        case 0:
+            strengthBar.value = 20;
+            message
+            break
+        case 1:
+            strengthBar.value = 40;
+            break
+        case 2:
+            strengthBar.value = 60;
+            break
+        case 3:
+            strengthBar.value = 80;
+            break
+        case 4:
+            strengthBar.value = 100;
+            break
+
+    }
+    
+
+}
+
+function validate(){
+    var pass = document.getElementById("pass1");
+    var upper = document.getElementById("upper");
+    var lower = document.getElementById("lower");
+    var number = document.getElementById("number");
+    var len = document.getElementById("length");
+    var sp_char = document.getElementById("special_char");
+
+    if(pass.value.match(/[0-9]/)){
+        number.style.color = "green"
+    }
+    else{
+        number.style.color = "red"
+    }
+
+    if(pass.value.match(/[A-Z]/)){
+        upper.style.color = "green"
+    }
+    else{
+        upper.style.color = "red"
+    }
+
+    if(pass.value.match(/[a-z]/)){
+        lower.style.color = "green"
+    }
+    else{
+        lower.style.color = "red"
+    }
+
+    if(pass.value.match(/[!\@\#\£\$\%\^\&\*\()\-\=\+\?\<\>\.\,]/)){
+        sp_char.style.color = "green"
+    }
+    else{
+        sp_char.style.color = "red"
+    }
+
+    if(pass.value.length > 8){
+        len.style.color = "green"
+    }
+    else{
+        len.style.color = "red"
+    }
+
+    function conform(){
+        var pass1 = document.getElementById("pass1")
+        var pass2 = document.getElementById("pass2")
+        if(pass1.value == pass2.value){
+            document.getElementById("number").style.display ="none";
+            document.getElementById("length").style.display ="none";
+            document.getElementById("special_char").style.display ="none";
+            document.getElementById("upper").style.display ="none";
+            document.getElementById("lower").style.display ="none";
+        }
+        else{
+            document.getElementById("number").style.display ="block";
+            document.getElementById("length").style.display ="block";
+            document.getElementById("special_char").style.display ="block";
+            document.getElementById("upper").style.display ="block";
+            document.getElementById("lower").style.display ="block";
+
+        }
+    }
+
+}
+
+
+
+
+  </script>
+    <script>
+        $(document).ready(function () {
+    
+          $("#go-button").click(function (e) {
+            e.preventDefault()
+            $.ajax({
+              url: "http://localhost:8080/needs?address=" + $("#search").val(),
+              method: "GET",
+              crossDomain: true,
+              dataType: "json",
+              headers: {
+                'Access-Control-Allow-Origin': '*'
+              },
+              success: function (result) {
+    
+                $("#foodbank_details").empty()
+                for (var i = 0; i < result.length; i++) {
+                  $("#foodbank_details").append(`<div class="food-bank-inner-div"><div><div class="food-bank-header"><a href=${result[i].urls.html}>${result[i].name}</a></div><div>${result[i].distance_mi} miles away</div></div> <div class="food-bank-content">${result[i].needs.needs}</div></div>`)
+                  console.log(result[i])
+    
+    
+    
+    
+                }
+              }
+            });
+          })
+    
+          var autocomplete;
+    
+          autocomplete = new google.maps.places.Autocomplete((document.getElementById("search")), {
+            type: ['geocode'],
+            componentRestrictions: { country: 'uk' }
+          })
+    
+          google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var near_place = autocomplete.getPlace()
+          })
+        })
+        const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+accordionItemHeaders.forEach(accordionItemHeader => {
+  accordionItemHeader.addEventListener("click", event => {
+    
+    accordionItemHeader.classList.toggle("active");
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    
+    if(accordionItemHeader.classList.contains("active")) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    }
+    else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+    
+  });
+});
+
+      </script>
+    
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
